@@ -1,0 +1,19 @@
+node_modules
+dist
+debug/
+target/
+.DS_Store
+
+# copy plugin
+copy-plugin/fixtures/js
+copy-plugin/build
+
+# css extract plugin
+css-extract/js
+
+# html plugin
+html-plugin/js
+
+# sri plugin
+sri-plugin/js
+

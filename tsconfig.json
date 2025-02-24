@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2021",
+    "esModuleInterop": true,
+    "declaration": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "composite": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "strict": false,
+    "checkJs": false,
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": [
+    "*.ts"
+  ],
+  "references": [],
+  "ts-node": {
+    "transpileOnly": true
+  }
+}
