@@ -34,6 +34,7 @@ jobs:
       - name: Install Pnpm
         shell: bash
         run: |
+          npm install -g corepack --force
           corepack enable
 
       - name: Setup Node.js
