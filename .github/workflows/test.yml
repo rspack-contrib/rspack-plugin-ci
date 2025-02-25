@@ -34,7 +34,6 @@ jobs:
       - name: Install Pnpm
         shell: bash
         run: |
-          npm install -g corepack@latest
           corepack enable
 
       - name: Setup Node.js
