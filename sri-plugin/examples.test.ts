@@ -44,7 +44,7 @@ function createTestCases(type: "webpack" | "rspack") {
       if (type === "rspack" && !configContent.includes("createHtmlPlugin")) {
         return;
       }
-      test.concurrent(`${example}/${type}`, async () => {
+      test(`${example}/${type}`, async () => {
         rimraf.sync(join(exampleDirectory, "dist", type));
         await new Promise<void>((resolve, reject) => {
           const stdout: string[] = [];
