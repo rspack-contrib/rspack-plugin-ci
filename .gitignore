@@ -9,10 +9,9 @@ copy-plugin/build
 
 # css extract plugin
 css-extract/js
+!css-extract/**/node_modules
 
 # html plugin
 html-plugin/js
 
-# sri plugin
-sri-plugin/js
 
