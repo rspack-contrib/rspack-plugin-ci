@@ -84,6 +84,7 @@ async function testWithPuppeteer(
 
   const port = await getPort();
   const browser = await puppeteer.launch({
+    headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const fastify = Fastify({ logger: true });
