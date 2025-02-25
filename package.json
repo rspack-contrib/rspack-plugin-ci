@@ -7,6 +7,10 @@
     "test": "cross-env NO_COLOR=1 node --expose-gc --max-old-space-size=8192 --experimental-vm-modules ./node_modules/jest-cli/bin/jest --logHeapUsage",
     "testu": "cross-env NO_COLOR=1 node --expose-gc --max-old-space-size=8192 --experimental-vm-modules ./node_modules/jest-cli/bin/jest --logHeapUsage --updateSnapshot"
   },
+  "engines": {
+    "pnpm": "9.15.5"
+  },
+  "packageManager": "pnpm@9.15.5",
   "repository": "web-infra-dev/rspack-plugin-ci",
   "devDependencies": {
     "@rspack/core": "1.2.5",
@@ -53,6 +57,5 @@
     "prettier-2": "npm:prettier@2.8.8",
     "jest-environment-jsdom": "^29.7.0"
   },
-  "dependencies": {},
-  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
+  "dependencies": {}
 }
