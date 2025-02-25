@@ -9,6 +9,7 @@ import { readdirSync, readFileSync } from "fs";
 import spawn from "cross-spawn";
 import { join } from "path";
 import { rimraf } from "rimraf";
+import { platform } from "os";
 
 jest.unmock("html-webpack-plugin");
 
@@ -44,7 +45,9 @@ function createTestCases(type: "webpack" | "rspack") {
       if (type === "rspack" && !configContent.includes("createHtmlPlugin")) {
         return;
       }
-      test(`${example}/${type}`, async () => {
+      // Warning: test.concurrent will lead puppeteer to timeout on macos
+      const testFn = platform() === "darwin" ? test : test.concurrent;
+      testFn(`${example}/${type}`, async () => {
         rimraf.sync(join(exampleDirectory, "dist", type));
         await new Promise<void>((resolve, reject) => {
           const stdout: string[] = [];
