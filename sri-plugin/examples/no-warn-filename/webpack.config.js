@@ -19,7 +19,7 @@ module.exports = {
             stats.compilation.warnings.filter(
               (warning) =>
                 !warning.message.match(
-                  /Use \[contenthash\] and ensure realContentHash/
+                  /Using \[hash\], \[fullhash\], \[modulehash\], or \[chunkhash\] can be risky/
                 )
             )
           .length).toEqual(0);
