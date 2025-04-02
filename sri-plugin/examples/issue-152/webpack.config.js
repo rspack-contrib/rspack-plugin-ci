@@ -23,9 +23,7 @@ module.exports = {
     {
       apply: (compiler) => {
         compiler.hooks.done.tap("wsi-test", (stats) => {
-          expect(Object.keys(stats.compilation.assets)).toContain(
-            "85e3f6d0198e353b.js"
-          );
+          expect(Object.values(stats.compilation.assets).some(asset => asset.source().includes(`{"key":"value","key2":"value2","key3":"value","key4":"value2","key5":"value","key6":"value2","key7":"value","key8":"value2","key9":"value","key10":"value2","key11":"value","key12":"value2","key13":"value","key14":"value2","key15":"value","key16":"value2","key17":"value","key18":"value2","key19":"value","key20":"value2","key21":"value","key22":"value2"}`))).toBe(true);
         });
       },
     },

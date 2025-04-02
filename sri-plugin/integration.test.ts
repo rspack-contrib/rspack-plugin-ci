@@ -56,7 +56,7 @@ describe("sri-plugin/integration", () => {
   });
 
   const isHashWarning = (warning: Error) =>
-    warning.message.match(/Use \[contenthash\] and ensure realContentHash/);
+    warning.message.match(/Using \[hash\], \[fullhash\], \[modulehash\], or \[chunkhash\] can be risky/);
 
   test("warns when [fullhash] is used", async () => {
     const stats = await runRspackForSimpleProject({

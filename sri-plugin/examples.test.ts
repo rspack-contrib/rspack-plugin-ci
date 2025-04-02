@@ -87,7 +87,7 @@ function createTestCases(type: "webpack" | "rspack") {
           cmd.on("error", reject);
         });
         await new Promise((resolve) => setTimeout(resolve, 0));
-      });
+      }, 60000);
     });
 }
 

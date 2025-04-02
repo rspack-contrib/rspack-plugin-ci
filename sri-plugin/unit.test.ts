@@ -271,10 +271,10 @@ describe("sri-plugin/unit", () => {
     expect(compilation.errors.length).toBe(1);
     expect(compilation.warnings.length).toBe(1);
     expect(compilation.warnings[0]?.message).toMatch(
-      /Set rspack option output\.crossOriginLoading/
+      /SRI requires a cross-origin policy/
     );
     expect(compilation.errors[0]?.message).toMatch(
-      /rspack option output.crossOriginLoading not set, code splitting will not work!/
+      /Subresource integrity is not applied to async chunks/
     );
   });
 
