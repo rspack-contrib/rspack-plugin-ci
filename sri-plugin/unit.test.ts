@@ -105,7 +105,7 @@ describe("sri-plugin/unit", () => {
     // expect(compilation.warnings[1]).toBeUndefined();
     expect(compilation.warnings.length).toEqual(0);
     expect(compilation.errors[0]?.message).toMatch(
-      /Expected 'sha256' \| 'sha384' \| 'sha512'/
+      /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
     );
     expect(compilation.warnings[1]).toBeUndefined();
   });
@@ -141,7 +141,7 @@ describe("sri-plugin/unit", () => {
     expect(compilation.errors.length).toBe(1);
     expect(compilation.warnings.length).toBe(0);
     expect(compilation.errors[0]?.message).toMatch(
-      /Expected array, received string/
+      /Expected tuple at \"hashFuncNames\"/
     );
   });
 
@@ -160,7 +160,7 @@ describe("sri-plugin/unit", () => {
     expect(compilation.errors.length).toBe(1);
     expect(compilation.warnings.length).toBe(0);
     expect(compilation.errors[0]?.message).toMatch(
-      /Expected 'sha256' \| 'sha384' \| 'sha512', received number/
+      /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
     );
   });
 
@@ -179,7 +179,7 @@ describe("sri-plugin/unit", () => {
     expect(compilation.errors.length).toBe(1);
     expect(compilation.warnings.length).toBe(0);
     expect(compilation.errors[0]?.message).toMatch(
-      /Array must contain at least 1 element/
+      /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
     );
   });
 
@@ -198,7 +198,7 @@ describe("sri-plugin/unit", () => {
     expect(compilation.errors.length).toBe(1);
     expect(compilation.warnings.length).toBe(0);
     expect(compilation.errors[0]?.message).toMatch(
-      /Expected 'sha256' \| 'sha384' \| 'sha512', received 'frobnicate'/
+      /xpected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
     );
   });
 
