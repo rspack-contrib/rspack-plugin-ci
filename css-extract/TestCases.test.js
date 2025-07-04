@@ -382,7 +382,7 @@ describe("TestCases", () => {
 							const expectedWarnings = require(warningsFile);
 							expect(
 								actualWarnings
-									.replace(/(\(from: .*\))?/g, "")
+									.replace(/\(from .*\)?/g, "(from xxx)")
 									.replace(/\*\scss\s(.*)?!/g, "* css /path/to/loader.js!")
 									.replace(/\*\scss\s(.*)?!/g, "* css /path/to/loader.js!")
 									.replace(/│     at .*\n/g, "")
