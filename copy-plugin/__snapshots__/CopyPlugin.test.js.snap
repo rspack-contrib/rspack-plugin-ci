@@ -61,7 +61,7 @@ transform aaaa",
 exports[`CopyPlugin stats should minify: assets 1`] = `
 Object {
   "asset-modules/deepnested.txt": "",
-  "unoptimized.js": "let a=1;console.log(1);",
+  "unoptimized.js": "const a=1;console.log(1);",
 }
 `;
 

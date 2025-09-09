@@ -30,11 +30,11 @@ exports[`HMR should reloads with non http/https link href 2`] = `"<link rel=\\"s
 
 exports[`HMR should reloads with non-file script in the end of page 1`] = `"[HMR] Reload all CSS"`;
 
-exports[`HMR should reloads with non-file script in the end of page 2`] = `"<link rel=\\"stylesheet\\" href=\\"/dist/main.css\\"><link rel=\\"stylesheet\\" href=\\"http://localhost/dist/main.css?1479427200000\\">"`;
+exports[`HMR should reloads with non-file script in the end of page 2`] = `"<link rel=\\"stylesheet\\" href=\\"/dist/main.css\\"><link rel=\\"stylesheet\\" href=\\"/dist/main.css?1479427200000\\">"`;
 
 exports[`HMR should work reload all css 1`] = `"[HMR] Reload all CSS"`;
 
-exports[`HMR should work reload all css 2`] = `"<link rel=\\"stylesheet\\" href=\\"/dist/main.css\\"><link rel=\\"stylesheet\\" href=\\"http://localhost/dist/main.css?1479427200000\\">"`;
+exports[`HMR should work reload all css 2`] = `"<link rel=\\"stylesheet\\" href=\\"/dist/main.css\\"><link rel=\\"stylesheet\\" href=\\"/dist/main.css?1479427200000\\">"`;
 
 exports[`HMR should works 1`] = `"[HMR] CSS reload %s"`;
 
