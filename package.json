@@ -13,8 +13,8 @@
   "packageManager": "pnpm@9.15.5",
   "repository": "web-infra-dev/rspack-plugin-ci",
   "devDependencies": {
-    "@rspack/core": "npm:@rspack-canary/core@1.4.3-canary-98b815e4-20250703091256",
-    "@rspack/cli": "npm:@rspack-canary/cli@1.4.3-canary-98b815e4-20250703091256",
+    "@rspack/core": "npm:@rspack-canary/core@1.6.5-canary-aa49744b-20251119174225",
+    "@rspack/cli": "npm:@rspack-canary/cli@1.6.5-canary-aa49744b-20251119174225",
     "@webdiscus/pug-loader": "^2.11.1",
     "@types/cross-spawn": "^6.0.6",
     "@types/tmp": "^0.2.6",
