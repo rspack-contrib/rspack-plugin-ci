@@ -347,11 +347,11 @@ var installedCssChunks = {
 
 __webpack_require__.f.miniCss = function (chunkId, promises) {
 	var cssChunks = {
+"a": 1,
 "b1": 1,
 "b2": 1,
 "c1": 1,
 "c2": 1,
-"a": 1,
 
 };
 	if (installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId])
