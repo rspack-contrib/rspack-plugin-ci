@@ -83,32 +83,32 @@ describe("sri-plugin/unit", () => {
 
   // CHANGED: throw error when not standard hash function because it can not be supported by rust
   // test("warns when no standard hash function name is specified", async () => {
-  // test("throw error when not standard hash function name is specified", async () => {
-  //   const plugin = new SubresourceIntegrityPlugin({
-  //     hashFuncNames: ["md5" as any],
-  //   });
+  test("throw error when not standard hash function name is specified", async () => {
+    const plugin = new SubresourceIntegrityPlugin({
+      hashFuncNames: ["md5" as any],
+    });
 
-  //   const compilation = await runCompilation(
-  //     rspack({
-  //       ...defaultOptions,
-  //       plugins: [plugin],
-  //     })
-  //   );
+    const compilation = await runCompilation(
+      rspack({
+        ...defaultOptions,
+        plugins: [plugin],
+      })
+    );
 
-  //   // expect(compilation.errors).toEqual([]);
-  //   // expect(compilation.warnings[0]?.message).toMatch(
-  //   //   new RegExp(
-  //   //     "It is recommended that at least one hash function is part of " +
-  //   //     "the set for which support is mandated by the specification"
-  //   //   )
-  //   // );
-  //   // expect(compilation.warnings[1]).toBeUndefined();
-  //   expect(compilation.warnings.length).toEqual(0);
-  //   expect(compilation.errors[0]?.message).toMatch(
-  //     /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
-  //   );
-  //   expect(compilation.warnings[1]).toBeUndefined();
-  // });
+    // expect(compilation.errors).toEqual([]);
+    // expect(compilation.warnings[0]?.message).toMatch(
+    //   new RegExp(
+    //     "It is recommended that at least one hash function is part of " +
+    //     "the set for which support is mandated by the specification"
+    //   )
+    // );
+    // expect(compilation.warnings[1]).toBeUndefined();
+    expect(compilation.warnings.length).toEqual(0);
+    expect(compilation.errors[0]?.message).toMatch(
+      /Expect SRI hash function to be 'sha256', 'sha384' or 'sha512', but got 'md5'/
+    );
+    expect(compilation.warnings[1]).toBeUndefined();
+  });
 
   test("supports new constructor with array of hash function names", async () => {
     const plugin = new SubresourceIntegrityPlugin({
@@ -126,81 +126,81 @@ describe("sri-plugin/unit", () => {
     expect(compilation.warnings.length).toBe(0);
   });
 
-  // test("errors if hash function names is not an array", async () => {
-  //   const plugin = new SubresourceIntegrityPlugin({
-  //     hashFuncNames: "sha256" as any,
-  //   });
+  test("errors if hash function names is not an array", async () => {
+    const plugin = new SubresourceIntegrityPlugin({
+      hashFuncNames: "sha256" as any,
+    });
 
-  //   const compilation = await runCompilation(
-  //     rspack({
-  //       ...defaultOptions,
-  //       plugins: [plugin, disableOutputPlugin],
-  //     })
-  //   );
+    const compilation = await runCompilation(
+      rspack({
+        ...defaultOptions,
+        plugins: [plugin, disableOutputPlugin],
+      })
+    );
 
-  //   expect(compilation.errors.length).toBe(1);
-  //   expect(compilation.warnings.length).toBe(0);
-  //   expect(compilation.errors[0]?.message).toMatch(
-  //     /Expected tuple at \"hashFuncNames\"/
-  //   );
-  // });
+    expect(compilation.errors.length).toBe(1);
+    expect(compilation.warnings.length).toBe(0);
+    expect(compilation.errors[0]?.message).toMatch(
+      /InvalidArg, Given napi value is not an array on RawSubresourceIntegrityPluginOptions.hashFuncNames/
+    );
+  });
 
-  // test("errors if hash function names contains non-string", async () => {
-  //   const plugin = new SubresourceIntegrityPlugin({
-  //     hashFuncNames: [1234] as any,
-  //   });
+  test("errors if hash function names contains non-string", async () => {
+    const plugin = new SubresourceIntegrityPlugin({
+      hashFuncNames: [1234] as any,
+    });
 
-  //   const compilation = await runCompilation(
-  //     rspack({
-  //       ...defaultOptions,
-  //       plugins: [plugin, disableOutputPlugin],
-  //     })
-  //   );
+    const compilation = await runCompilation(
+      rspack({
+        ...defaultOptions,
+        plugins: [plugin, disableOutputPlugin],
+      })
+    );
 
-  //   expect(compilation.errors.length).toBe(1);
-  //   expect(compilation.warnings.length).toBe(0);
-  //   expect(compilation.errors[0]?.message).toMatch(
-  //     /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
-  //   );
-  // });
+    expect(compilation.errors.length).toBe(1);
+    expect(compilation.warnings.length).toBe(0);
+    expect(compilation.errors[0]?.message).toMatch(
+      /StringExpected, Failed to convert JavaScript value `Number 1234 ` into rust type `String` on RawSubresourceIntegrityPluginOptions.hashFuncNames/
+    );
+  });
 
-  // test("errors if hash function names are empty", async () => {
-  //   const plugin = new SubresourceIntegrityPlugin({
-  //     hashFuncNames: [] as any,
-  //   });
+  test("errors if hash function names are empty", async () => {
+    const plugin = new SubresourceIntegrityPlugin({
+      hashFuncNames: [] as any,
+    });
 
-  //   const compilation = await runCompilation(
-  //     rspack({
-  //       ...defaultOptions,
-  //       plugins: [plugin, disableOutputPlugin],
-  //     })
-  //   );
+    const compilation = await runCompilation(
+      rspack({
+        ...defaultOptions,
+        plugins: [plugin, disableOutputPlugin],
+      })
+    );
 
-  //   expect(compilation.errors.length).toBe(1);
-  //   expect(compilation.warnings.length).toBe(0);
-  //   expect(compilation.errors[0]?.message).toMatch(
-  //     /Expected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
-  //   );
-  // });
+    expect(compilation.errors.length).toBe(1);
+    expect(compilation.warnings.length).toBe(0);
+    expect(compilation.errors[0]?.message).toMatch(
+      /Expect at least one SRI hash function name/
+    );
+  });
 
-  // test("errors if hash function names contains unsupported digest", async () => {
-  //   const plugin = new SubresourceIntegrityPlugin({
-  //     hashFuncNames: ["frobnicate"] as any,
-  //   });
+  test("errors if hash function names contains unsupported digest", async () => {
+    const plugin = new SubresourceIntegrityPlugin({
+      hashFuncNames: ["frobnicate"] as any,
+    });
 
-  //   const compilation = await runCompilation(
-  //     rspack({
-  //       ...defaultOptions,
-  //       plugins: [plugin, disableOutputPlugin],
-  //     })
-  //   );
+    const compilation = await runCompilation(
+      rspack({
+        ...defaultOptions,
+        plugins: [plugin, disableOutputPlugin],
+      })
+    );
 
-  //   expect(compilation.errors.length).toBe(1);
-  //   expect(compilation.warnings.length).toBe(0);
-  //   expect(compilation.errors[0]?.message).toMatch(
-  //     /xpected value to be one of \"sha256\", \"sha384\" or \"sha512\"/
-  //   );
-  // });
+    expect(compilation.errors.length).toBe(1);
+    expect(compilation.warnings.length).toBe(0);
+    expect(compilation.errors[0]?.message).toMatch(
+      /Expect SRI hash function to be 'sha256', 'sha384' or 'sha512', but got 'frobnicate'/
+    );
+  });
 
   // TODO: support hashLoading option
   // test("errors if hashLoading option uses unknown value", async () => {
