@@ -2,14 +2,14 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["entry1"], {
 "./entryA.js": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.r(__webpack_exports__);
-/* import */var _styleA_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./styleA.css");
+/* import */ var _styleA_css__rspack_import_0 = __webpack_require__("./styleA.css");
 
 
 
 }),
 "./entryB.js": (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.r(__webpack_exports__);
-/* import */var _styleB_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./styleB.css");
+/* import */ var _styleB_css__rspack_import_0 = __webpack_require__("./styleB.css");
 
 
 

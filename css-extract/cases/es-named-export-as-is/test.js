@@ -11,5 +11,5 @@ module.exports = function (outputDirectory, _stats) {
 var _1 = "DD6nw8MPcAMdtPEK";
 var _2 = "W0R3gkykgVcMOZ0M";
 var _3 = "qUfyjYvB1M0V8uYS";`);
-  expect(mainContent).toContain(`console.log({ css: _style_css__WEBPACK_IMPORTED_MODULE_0__["default"], aClass: _style_css__WEBPACK_IMPORTED_MODULE_0__["a-class"], bClass: _style_css__WEBPACK_IMPORTED_MODULE_0__.b__class, cClass: _style_css__WEBPACK_IMPORTED_MODULE_0__.cClass })`);
+  expect(mainContent).toContain(`console.log({ css: _style_css__rspack_import_0["default"], aClass: _style_css__rspack_import_0["a-class"], bClass: _style_css__rspack_import_0.b__class, cClass: _style_css__rspack_import_0.cClass })`);
 };
