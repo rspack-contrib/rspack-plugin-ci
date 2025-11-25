@@ -11,5 +11,5 @@ module.exports = function (outputDirectory, _stats) {
 var _1 = "foo__style__a-class";
 var _2 = "foo__style__b__class";
 var _3 = "foo__style__cClass";`);
-  expect(mainContent).toContain(`console.log({ css: _style_css__WEBPACK_IMPORTED_MODULE_0__["default"], aClass: _style_css__WEBPACK_IMPORTED_MODULE_0__.aClass, bClass: _style_css__WEBPACK_IMPORTED_MODULE_0__.bClass, cClass: _style_css__WEBPACK_IMPORTED_MODULE_0__.cClass })`);
+  expect(mainContent).toContain(`console.log({ css: _style_css__rspack_import_0["default"], aClass: _style_css__rspack_import_0.aClass, bClass: _style_css__rspack_import_0.bClass, cClass: _style_css__rspack_import_0.cClass })`);
 };

@@ -9,5 +9,5 @@ module.exports = function (outputDirectory, _stats) {
 // extracted by css-extract-rspack-plugin
 var _1 = () => "class-name-a";
 var _2 = () => "class-name-b";`);
-  expect(mainContent).toContain(`console.log((0,_style_css__WEBPACK_IMPORTED_MODULE_0__.cnA)(), (0,_style_css__WEBPACK_IMPORTED_MODULE_0__.cnB)());`);
+  expect(mainContent).toContain(`console.log((0,_style_css__rspack_import_0.cnA)(), (0,_style_css__rspack_import_0.cnB)());`);
 };
